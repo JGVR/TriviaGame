@@ -2,20 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-@{
-    Questions quest = new Questions();
-}
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to the TriviaGame</h1>
+
 </div>
 
+<div class="GameDesc">
+    <h2>Description</h2>
+    <p>This game consist of 10 multiple choice questions. Each question will have 4 possible answer, 1 of those answer is the correct answer for the question.</p>
+    <p>The level of difficulty will increase for every 2 question. The 10th question been the hardest one</p>
+    <h2>Rules: </h2>
+    <h3>Hints</h3>
+    <p>You are allow to use <b>hints</b>. Hints will give you clues about the correct answer for the question. You will only be allowed to use hints 3 times during the game, and only 1 clue will be display per use, so use your <b>hints</b> smartly.</p>
+    <h3>Questions & Answers</h3>
+    <p>You are allowed to go back to previous questions, as well as change the answers for those previous questions if you are unsure of your answers later on in the game.</p>
+</div>
 
-<div>
-    @foreach (var q in quest.getQuestions())
-    {
-        <h1>@q.Question</h1>
-    }
+<div class="StartGameBtn">
+    <input type="button" value="Start Game" onclick="location.href='@Url.Action("StartGame", "Home")'" />
 </div>
 
