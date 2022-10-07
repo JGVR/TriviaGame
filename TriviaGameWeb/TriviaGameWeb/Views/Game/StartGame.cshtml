@@ -1,0 +1,14 @@
+﻿@model Question
+@{
+    ViewData["Title"] = "Game";
+    
+ }
+
+<div class="questions">
+    <form asp-controller="Game" asp-action="StartGame" asp-route-id="@ViewBag.Count" method="get">
+        <label>@Model.Questions</label>
+        <input type="radio" />
+        <label>@Model.Answer</label>
+        <input type="button" value="Next" onclick="location.href='@Url.Action("StartGame", "Game", new { Id = ViewBag.Count})'"/>
+    </form>
+</div>

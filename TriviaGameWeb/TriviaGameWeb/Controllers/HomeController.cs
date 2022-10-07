@@ -8,6 +8,9 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
+    [BindProperty]
+    public int id { get; set; }
+
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
@@ -25,7 +28,7 @@ public class HomeController : Controller
 
     public IActionResult StartGame()
     {
-        return View();
+        return RedirectToAction("StartGame", "Game");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
