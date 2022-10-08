@@ -8,7 +8,13 @@
     <form asp-controller="Game" asp-action="StartGame" asp-route-id="@ViewBag.Count" method="get">
         <label>@Model.Questions</label>
         <input type="radio" />
-        <label>@Model.Answer</label>
-        <input type="button" value="Next" onclick="location.href='@Url.Action("StartGame", "Game", new { Id = ViewBag.Count})'"/>
+        <label>@Model.CorrectAnswer</label>
+        <input type="radio" />
+        <label>@Model.IncorrectAnswers[0]</label>
+        <input type="radio" />
+        <label>@Model.IncorrectAnswers[1]</label>
+        <input type="radio" />
+        <label>@Model.IncorrectAnswers[2]</label>
+        <input type="button" value="Next" onclick="location.href='@Url.Action("StartGame", "Game", new { Id = ViewBag.Count})'" />
     </form>
 </div>

@@ -21,12 +21,14 @@ namespace TriviaGameWeb.Controllers
                 HttpContext.Session.SetInt32("count", 1);
                 ViewBag.Count = HttpContext.Session.GetInt32("count").Value;
                 question.GetQuestions(ViewBag.Count);
+                question.GetAnswer(ViewBag.Count);
                 return View(question);
             }
             var current = HttpContext.Session.GetInt32("count");
             HttpContext.Session.SetInt32("count", (int)(current + 1));
             ViewBag.Count = HttpContext.Session.GetInt32("count").Value;
             question.GetQuestions(ViewBag.Count);
+            question.GetAnswer(ViewBag.Count);
             return View(question);
         }
     }
